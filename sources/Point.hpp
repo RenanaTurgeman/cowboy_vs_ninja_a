@@ -19,7 +19,7 @@ namespace ariel {
         double distance(Point other);
         
         /* Prints the coordinates of the given point to the console.*/
-        void print(Point point);
+        virtul void print(Point point);
         
         /*The function returns the closest point to the destination point, - which is at most the given distance from the source point*/
         Point moveTowards(Point source, Point destination, double distance);
