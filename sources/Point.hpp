@@ -12,7 +12,7 @@ namespace ariel {
     
     public:
         /*Constructor for creating a new point with the given x and y coordinates.*/
-        Point(double x, double y);
+        Point(double cor_x, double cor_y);
         
         /*Calculates the Euclidean distance between this point and another point.
           The other point is passed as a parameter.*/
