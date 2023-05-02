@@ -4,7 +4,6 @@
 #include "Point.hpp"
 #include <iostream>
 using namespace std;
-
 namespace ariel {
     // This class represents a character in a game world. 
     class Character {

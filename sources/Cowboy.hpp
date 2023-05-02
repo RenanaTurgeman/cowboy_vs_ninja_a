@@ -4,6 +4,7 @@
 #include "Character.hpp"
 #include <iostream>
 using namespace std;
+/*Cowboy has 6 bullets and 11 hit points*/
 
 namespace ariel {
     class Cowboy : public Character{
