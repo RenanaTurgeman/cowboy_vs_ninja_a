@@ -20,7 +20,7 @@ namespace ariel {
         public:
             /* Constructor for creating a new character with the given name, location, and hit points.*/
             Character(string name, Point& location, int hit_point);
-            virtual ~Character(); 
+            ~Character() = default; 
             /* Returns true if the character has more than 0 hit points, and false otherwise*/
             bool isAlive() const;
             /*Calculates the distance between this character and another character.*/
