@@ -2,6 +2,9 @@
 
 using namespace ariel;
 using namespace std;
+Point::Point() : x_coor(0.0), y_coor(0.0) {
+
+}
 
 Point::Point(double x_coor, double y_coor): x_coor(x_coor), y_coor(y_coor){
 

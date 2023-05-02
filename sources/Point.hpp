@@ -12,6 +12,7 @@ namespace ariel {
     
     public:
         /*Constructor for creating a new point with the given x and y coordinates.*/
+        Point();
         Point(double x_coor, double y_coor);
         ~Point() = default; 
 
