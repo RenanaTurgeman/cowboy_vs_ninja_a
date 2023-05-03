@@ -22,7 +22,7 @@ namespace ariel {
             ~SmartTeam() = default;
             // member functions
             void add(Character* fighter);
-            void attack(SmartTeam& enemyTeam);
+            void attack(SmartTeam* enemyTeam);
             int stillAlive() const;
             void print() const;
             friend std::ostream& operator<<(std::ostream& ostream, const SmartTeam& smartTeam); //TODO: check if really need (not work without)

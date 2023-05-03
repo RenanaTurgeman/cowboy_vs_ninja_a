@@ -9,7 +9,7 @@ void SmartTeam::add(Character* fighter){
 
 }
 
-void SmartTeam::attack(SmartTeam& enemyTeam){
+void SmartTeam::attack(SmartTeam* enemyTeam){
 
 }
 
