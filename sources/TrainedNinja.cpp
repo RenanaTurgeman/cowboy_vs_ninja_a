@@ -7,10 +7,10 @@ TrainedNinja::TrainedNinja(string name, Point location): Ninja(name,location,150
 
 }
 
-void TrainedNinja::move(const Character& enemy){
+void TrainedNinja::move(const Character* enemy){
     return Ninja::move(enemy);
 }
-void TrainedNinja::slash(const Character& enemy) {
+void TrainedNinja::slash(const Character* enemy) {
     return Ninja::slash(enemy);
 }
 
@@ -34,6 +34,10 @@ Point TrainedNinja::getLocation() const {
     return Ninja::getLocation();
 }
 
-void TrainedNinja::Print() {
+void TrainedNinja::print() {
     
+}
+
+ostream& ariel::operator<<(std::ostream& ostream, const TrainedNinja& trainedNinja){
+    return  ostream;
 }

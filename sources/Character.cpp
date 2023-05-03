@@ -1,4 +1,5 @@
 #include "Character.hpp"
+#include <iostream>
 
 using namespace ariel;
 using namespace std;
@@ -26,6 +27,10 @@ Point Character::getLocation() const{
     return this->location;
 }
 
-void Character::Print(){
+void Character::print(){
     
+}
+
+ostream& ariel::operator<<(std::ostream& ostream, const Character& character){
+    return  ostream;
 }

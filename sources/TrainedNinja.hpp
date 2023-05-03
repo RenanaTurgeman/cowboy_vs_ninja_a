@@ -11,8 +11,8 @@ namespace ariel {
         public:
             TrainedNinja(const string name, const Point location);
             
-            void move(const Character& enemy) override;
-            void slash(const Character& enemy) override;
+            void move(const Character* enemy) override;
+            void slash(const Character* enemy) override;
 
             /* Returns true if the character has more than 0 hit points, and false otherwise*/
             bool isAlive() const override;
@@ -25,7 +25,9 @@ namespace ariel {
             /*Returns the character's current location.*/
             Point getLocation() const override;
             /*Prints the character's name and location to the console.*/
-            void Print() override;
+            void print() override;
+            friend std::ostream& operator<<(std::ostream& ostream, const TrainedNinja& trainedNinja); //TODO: check if really need (not work without)
+
     };
 }
 

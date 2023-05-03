@@ -1,7 +1,7 @@
 #include "SmartTeam.hpp"
 using namespace ariel;
 using namespace std;
-SmartTeam::Team(Character& leader): leader(leader), fighters(){
+SmartTeam::SmartTeam(Character* leader): leader(leader), fighters(){
 //    fighters.push_back(leader);
 }
 
@@ -19,4 +19,7 @@ int SmartTeam::stillAlive() const{
 
 void SmartTeam::print() const{
 
+}
+ostream& ariel::operator<<(std::ostream& ostream, const SmartTeam& smartTeam){
+    return  ostream;
 }

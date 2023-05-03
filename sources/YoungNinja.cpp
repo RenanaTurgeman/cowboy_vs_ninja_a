@@ -7,10 +7,10 @@ YoungNinja::YoungNinja(string name, Point location): Ninja(name,location,150,8){
 
 }
 
-void YoungNinja::move(const Character& enemy){
+void YoungNinja::move(const Character* enemy){
     return Ninja::move(enemy);
 }
-void YoungNinja::slash(const Character& enemy) {
+void YoungNinja::slash(const Character* enemy) {
     return Ninja::slash(enemy);
 }
 
@@ -34,6 +34,10 @@ Point YoungNinja::getLocation() const {
     return Ninja::getLocation();
 }
 
-void YoungNinja::Print() {
+void YoungNinja::print() {
     
+}
+
+ostream& ariel::operator<<(std::ostream& ostream, const YoungNinja& youngNinja){
+    return  ostream;
 }

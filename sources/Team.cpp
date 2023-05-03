@@ -1,7 +1,7 @@
 #include "Team.hpp"
 using namespace ariel;
 using namespace std;
-Team::Team(Character& leader): leader(leader), fighters(){
+Team::Team(Character* leader): leader(leader), fighters(){
 //    fighters.push_back(leader);
 }
 
@@ -17,6 +17,10 @@ int Team::stillAlive() const{
     return 1;
 }
             
-void Team::Print() const{
+void Team::print() const{
     
+}
+
+ostream& ariel::operator<<(std::ostream& ostream, const Team& team){
+    return  ostream;
 }

@@ -8,10 +8,10 @@ namespace ariel {
     class YoungNinja : public Ninja{
         private:
         public:
-            YoungNinja(string name, Point location);
+            YoungNinja(std::string name, Point location);
             
-            void move(const Character& enemy) override;
-            void slash(const Character& enemy) override;
+            void move(const Character* enemy) override;
+            void slash(const Character* enemy) override;
 
             /* Returns true if the character has more than 0 hit points, and false otherwise*/
             bool isAlive() const override;
@@ -20,11 +20,13 @@ namespace ariel {
             /* Decreases the character's hit points by the given number.*/
             void hit(int num) override;
             /*Returns the character's name*/
-            string getName() const override;
+            std::string getName() const override;
             /*Returns the character's current location.*/
             Point getLocation() const override;
             /*Prints the character's name and location to the console.*/
-            void Print() override;
+            void print() override;
+            friend std::ostream& operator<<(std::ostream& ostream, const YoungNinja& youngNinja); //TODO: check if really need (not work without)
+
     };
 }
 

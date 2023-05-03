@@ -12,7 +12,7 @@ namespace ariel {
         public:
             Cowboy(std::string name, Point& location);
             ~Cowboy()= default;
-            void shoot(Character& enemy);
+            void shoot(Character* enemy);
             bool hasboolets() const;
             void reload();
 
@@ -27,7 +27,10 @@ namespace ariel {
             /*Returns the character's current location.*/
             Point getLocation() const override;
             /*Prints the character's name and location to the console.*/
-            void Print() override;
+            void print() override;
+
+        friend std::ostream& operator<<(std::ostream& ostream, const Cowboy& cowboy); //TODO: check if really need (not work without)
+
     };
 }
 

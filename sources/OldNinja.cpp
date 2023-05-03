@@ -7,10 +7,10 @@ OldNinja::OldNinja(string name, Point location) : Ninja(name, location, 150, 8){
 
 }
 
-void OldNinja::move(const Character& enemy){
+void OldNinja::move(const Character* enemy){
     return Ninja::move(enemy);
 }
-void OldNinja::slash(const Character& enemy) {
+void OldNinja::slash(const Character* enemy) {
     return Ninja::slash(enemy);
 }
 
@@ -34,6 +34,10 @@ Point OldNinja::getLocation() const {
     return Ninja::getLocation();
 }
 
-void OldNinja::Print() {
+void OldNinja::print() {
     
+}
+
+ostream& ariel::operator<<(ostream& ostream, const OldNinja& oldNinja){
+    return  ostream;
 }

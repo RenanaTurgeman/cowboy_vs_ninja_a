@@ -14,10 +14,14 @@ double Point::distance(const Point& other) const{
     return 0;
 }
 
-void Point::Print() const{
+void Point::print() const{
 
 }
 
 Point Point::moveTowards(Point& source, Point& destination, double distance) const{
     return Point(1,1);
+}
+
+ostream& ariel::operator<<(std::ostream& ostream, const Point& point){
+    return  ostream;
 }

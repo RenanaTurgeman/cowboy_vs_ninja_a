@@ -1,9 +1,14 @@
-#ifndef SMARTTEAM_HPP
-#define SMARTTEAM_HPP
+#ifndef SMART_TEAM_HPP
+#define SMART_TEAM_HPP
 
-#include "Character.hpp"
+#include "OldNinja.hpp"
+#include "TrainedNinja.hpp"
+#include "YoungNinja.hpp"
+#include "Cowboy.hpp"
+
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
 namespace ariel {
@@ -19,7 +24,9 @@ namespace ariel {
             void add(Character* fighter);
             void attack(SmartTeam& enemyTeam);
             int stillAlive() const;
-            void Print() const;
+            void print() const;
+            friend std::ostream& operator<<(std::ostream& ostream, const SmartTeam& smartTeam); //TODO: check if really need (not work without)
+
     };
 }
 

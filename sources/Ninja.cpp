@@ -8,11 +8,11 @@ Ninja::Ninja(string name, Point& location, int hit_point, int speed): Character(
 }
 
 
-void Ninja::move(const Character& enemy){
+void Ninja::move(const Character* enemy){
 
 }
 
-void Ninja::slash(const Character& enemy){
+void Ninja::slash(const Character* enemy){
 
 }
 
@@ -36,6 +36,10 @@ Point Ninja::getLocation() const {
     return Character::getLocation();
 }
 
-void Ninja::Print() {
+void Ninja::print() {
     
+}
+
+ostream& ariel::operator<<(std::ostream& ostream, const Ninja& ninja){
+    return  ostream;
 }

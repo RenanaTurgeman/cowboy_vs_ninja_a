@@ -1,7 +1,11 @@
 #ifndef TEAM2_HPP
 #define TEAM2_HPP
 
-#include "Character.hpp"
+#include "OldNinja.hpp"
+#include "TrainedNinja.hpp"
+#include "YoungNinja.hpp"
+#include "Cowboy.hpp"
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -19,7 +23,9 @@ namespace ariel {
             void add(Character* fighter);
             void attack(Team2* enemyTeam);
             int stillAlive();
-            void Print();
+            void print();
+            friend std::ostream& operator<<(std::ostream& ostream, const Team2& team2); //TODO: check if really need (not work without)
+
     };
 }
 

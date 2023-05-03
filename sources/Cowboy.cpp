@@ -5,7 +5,7 @@ using namespace std;
 
 Cowboy::Cowboy(string name, Point& location):Character(name , location , 11){ }
 
-void Cowboy::shoot(Character& enemy){
+void Cowboy::shoot(Character* enemy){
 
 }
 
@@ -14,33 +14,34 @@ void Cowboy::reload(){
 }
 
 bool Cowboy::hasboolets() const {
-    return bullet > 0;
+//    return bullet > 0;
+    return false;
 }
-
-//void Cowboy::reload() {
-//    bullet = 6;
-//}
 
 bool Cowboy::isAlive() const {
     return Character::isAlive();
 }
 
 double Cowboy::distance(const Character& other) const {
-    return 0;
+    return Character::distance(other);
 }
 
 void Cowboy::hit(int num) {
+    return Character::hit(num);
 }
 
 string Cowboy::getName() const {
-    return getName();
+    return Character::getName();
 }
 
 Point Cowboy::getLocation() const {
-    return getLocation();
+    return Character::getLocation();
 }
 
-void Cowboy::Print() {
+void Cowboy::print() {
     // cout << "Cowboy " << getName() << " is at location (" << getLocation().getX() << ", " << getLocation().getY() << ")" << endl;
 }
 
+ostream& ariel::operator<<(std::ostream& ostream, const Cowboy& cowboy){
+    return  ostream;
+}
