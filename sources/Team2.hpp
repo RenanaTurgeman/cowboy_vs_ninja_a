@@ -19,7 +19,7 @@ namespace ariel {
             void add(Character* fighter);
             void attack(Team2* enemyTeam);
             int stillAlive();
-            void print();
+            void Print();
     };
 }
 

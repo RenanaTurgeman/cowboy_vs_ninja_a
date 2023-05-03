@@ -34,6 +34,6 @@ Point OldNinja::getLocation() const {
     return Ninja::getLocation();
 }
 
-void OldNinja::print() {
+void OldNinja::Print() {
     
 }

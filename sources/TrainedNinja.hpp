@@ -25,7 +25,7 @@ namespace ariel {
             /*Returns the character's current location.*/
             Point getLocation() const override;
             /*Prints the character's name and location to the console.*/
-            void print() override;
+            void Print() override;
     };
 }
 

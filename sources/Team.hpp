@@ -6,8 +6,6 @@
 #include <vector>
 #include <memory>
 
-using namespace std;
-
 namespace ariel {
     class Team{
         private:
@@ -21,7 +19,7 @@ namespace ariel {
             void add(Character* fighter);
             void attack(Team& enemyTeam);
             int stillAlive() const;
-            void print() const;
+            void Print() const;
     };
 }
 

@@ -40,7 +40,7 @@ Point Cowboy::getLocation() const {
     return getLocation();
 }
 
-void Cowboy::print() {
+void Cowboy::Print() {
     // cout << "Cowboy " << getName() << " is at location (" << getLocation().getX() << ", " << getLocation().getY() << ")" << endl;
 }
 

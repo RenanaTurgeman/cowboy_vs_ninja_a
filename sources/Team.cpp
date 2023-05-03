@@ -17,6 +17,6 @@ int Team::stillAlive() const{
     return 1;
 }
             
-void Team::print() const{
+void Team::Print() const{
     
 }

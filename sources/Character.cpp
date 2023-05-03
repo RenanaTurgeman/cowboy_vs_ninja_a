@@ -26,6 +26,6 @@ Point Character::getLocation() const{
     return this->location;
 }
 
-void Character::print(){
+void Character::Print(){
     
 }

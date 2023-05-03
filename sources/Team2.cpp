@@ -1,22 +1,22 @@
-#include "Team.hpp" //TODO: change to team 2
+#include "Team2.hpp"
 using namespace ariel;
 using namespace std;
-Team::Team(Character& leader): leader(leader), fighters(){
+Team2::Team(Character& leader): leader(leader), fighters(){
 //    fighters.push_back(leader);
 }
 
-void Team::add(Character* fighter){
+void Team2::add(Character* fighter){
 
 }
 
-void Team::attack(Team& enemyTeam){
+void Team2::attack(Team& enemyTeam){
 
 }
 
-int Team::stillAlive() const{
+int Team2::stillAlive() const{
     return 1;
 }
 
-void Team::print() const{
+void Team2::Print() const{
 
 }

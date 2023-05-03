@@ -19,7 +19,7 @@ namespace ariel {
             void add(Character* fighter);
             void attack(SmartTeam& enemyTeam);
             int stillAlive() const;
-            void print() const;
+            void Print() const;
     };
 }
 

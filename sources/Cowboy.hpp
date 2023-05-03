@@ -3,7 +3,6 @@
 
 #include "Character.hpp"
 #include <iostream>
-using namespace std;
 /*Cowboy has 6 bullets and 11 hit points*/
 
 namespace ariel {
@@ -11,7 +10,7 @@ namespace ariel {
         private:
             int bullet = 6; //amount
         public:
-            Cowboy(string name, Point& location);
+            Cowboy(std::string name, Point& location);
             ~Cowboy()= default;
             void shoot(Character& enemy);
             bool hasboolets() const;
@@ -24,11 +23,11 @@ namespace ariel {
             /* Decreases the character's hit points by the given number.*/
             void hit(int num) override;
             /*Returns the character's name*/
-            string getName() const override;
+            std::string getName() const override;
             /*Returns the character's current location.*/
             Point getLocation() const override;
             /*Prints the character's name and location to the console.*/
-            void print() override;
+            void Print() override;
     };
 }
 

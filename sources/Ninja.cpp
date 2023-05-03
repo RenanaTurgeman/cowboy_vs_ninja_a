@@ -36,6 +36,6 @@ Point Ninja::getLocation() const {
     return Character::getLocation();
 }
 
-void Ninja::print() {
+void Ninja::Print() {
     
 }

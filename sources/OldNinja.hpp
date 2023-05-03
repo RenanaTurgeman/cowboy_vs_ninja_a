@@ -3,13 +3,12 @@
 
 #include "Ninja.hpp"
 #include <iostream>
-using namespace std;
 
 namespace ariel {
     class OldNinja : public Ninja{
         private:
         public:
-            OldNinja(const string name, const Point location);
+            OldNinja(string name, Point location);
             
             void move(const Character& enemy) override;
             void slash(const Character& enemy) override;
@@ -21,11 +20,11 @@ namespace ariel {
             /* Decreases the character's hit points by the given number.*/
             void hit(int num) override;
             /*Returns the character's name*/
-            string getName() const override;
+            std::string getName() const override;
             /*Returns the character's current location.*/
             Point getLocation() const override;
             /*Prints the character's name and location to the console.*/
-            void print() override;
+            void Print() override;
     };
 }
 
