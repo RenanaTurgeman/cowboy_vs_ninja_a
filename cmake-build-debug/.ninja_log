@@ -1,0 +1,12 @@
+# ninja log v5
+7	736	1683112731429777956	CMakeFiles/untitled.dir/sources/Cowboy.cpp.o	557baafc87bd316a
+5	737	1683112731429777956	CMakeFiles/untitled.dir/sources/Character.cpp.o	b40f4a21368fdacf
+7	744	1683112731433779956	CMakeFiles/untitled.dir/sources/Ninja.cpp.o	69cbbd31b1c80963
+3	959	1683112731653889964	CMakeFiles/untitled.dir/Demo.cpp.o	7a807cb9c9e0264e
+736	1128	1683112731821973970	CMakeFiles/untitled.dir/sources/OldNinja.cpp.o	54bc4e39e41eff5a
+737	1133	1683112731825975970	CMakeFiles/untitled.dir/sources/Point.cpp.o	775a124baec77cad
+744	1262	1683112731954039974	CMakeFiles/untitled.dir/sources/SmartTeam.cpp.o	ee6fec57f78a4b22
+959	1461	1683112732150137981	CMakeFiles/untitled.dir/sources/Team.cpp.o	8a39ac28b85d0741
+1262	1585	1683112732274199985	CMakeFiles/untitled.dir/sources/YoungNinja.cpp.o	6449372fd77610e8
+1129	1674	1683112732366245988	CMakeFiles/untitled.dir/sources/Team2.cpp.o	a4f0a14102d7a187
+1	433	1683112827213649241	CMakeFiles/untitled.dir/sources/TrainedNinja.cpp.o	517bdc8381ed6a77

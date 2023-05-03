@@ -24,18 +24,18 @@ double Ninja::distance(const Character& other) const {
     return Character::distance(other);
 }
             
-void hit(int num) {
+void Ninja::hit(int num) {
     return Character::hit(num);
 }
 
-string getName() const {
+string Ninja::getName() const {
     return Character::getName();
 }
 
-Point getLocation() const {
+Point Ninja::getLocation() const {
     return Character::getLocation();
 }
 
-void print() {
+void Ninja::print() {
     
 }

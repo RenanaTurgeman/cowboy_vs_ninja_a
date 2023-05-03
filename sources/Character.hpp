@@ -3,7 +3,7 @@
 
 #include "Point.hpp"
 #include <iostream>
-using namespace std;
+using namespace std; //TODO : delete the std
 namespace ariel {
     // This class represents a character in a game world. 
     class Character {
@@ -31,7 +31,7 @@ namespace ariel {
             /*Returns the character's current location.*/
             virtual Point getLocation() const;
             /*Prints the character's name and location to the console.*/
-            virtual void print();
+            virtual void print(); //TODO: write Print
     };
 }
 

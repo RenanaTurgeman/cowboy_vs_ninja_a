@@ -17,9 +17,9 @@ bool Cowboy::hasboolets() const {
     return bullet > 0;
 }
 
-void Cowboy::reload() {
-    bullet = 6;
-}
+//void Cowboy::reload() {
+//    bullet = 6;
+//}
 
 bool Cowboy::isAlive() const {
     return Character::isAlive();

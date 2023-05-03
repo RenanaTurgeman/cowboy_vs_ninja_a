@@ -3,7 +3,7 @@
 using namespace ariel;
 using namespace std;
 
-Character::Character(string name, Point& location, int hit_point):name(name) , location(location), hit_point(hit_point{ }
+Character::Character(string name, Point& location, int hit_point):name(name) , location(location), hit_point(hit_point){ }
 
  bool Character::isAlive() const{
     return true;
@@ -17,12 +17,12 @@ void Character::hit(int num){
 
 }
 
-string getName() const{
+string Character::getName() const{
     return this->name;
 }
 
             
-Point getLocation() const{
+Point Character::getLocation() const{
     return this->location;
 }
 

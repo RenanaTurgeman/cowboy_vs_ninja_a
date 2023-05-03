@@ -1,7 +1,8 @@
 #include "Team.hpp"
-
-Team::Team(Character* leader):leader(leader){
-    fighters.push_back(leader);
+using namespace ariel;
+using namespace std;
+Team::Team(Character& leader): leader(leader), fighters(){
+//    fighters.push_back(leader);
 }
 
 void Team::add(Character* fighter){

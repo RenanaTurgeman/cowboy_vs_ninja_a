@@ -3,7 +3,7 @@
 using namespace ariel;
 using namespace std;
 
-YoungNinja::YoungNinja(const string name, const Point location): Ninja(name,location,150,8){
+YoungNinja::YoungNinja(string name, Point location): Ninja(name,location,150,8){
 
 }
 
@@ -19,11 +19,11 @@ bool YoungNinja::isAlive() const {
 }
             
 double YoungNinja::distance(const Character& other) const {
-    return Ninja::distance();
+    return Ninja::distance(other);
 }
 
-void YoungNinja::hit(int num) override{
-    return Ninja::hit();
+void YoungNinja::hit(int num){
+    return Ninja::hit(num);
 }
 
 string YoungNinja::getName() const {

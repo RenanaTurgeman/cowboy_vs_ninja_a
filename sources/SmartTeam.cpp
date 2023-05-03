@@ -1,21 +1,22 @@
-#include "SmartTeam.hpp"
-
-SmartTeam::SmartTeam(Character* leader):leader(leader){
-    fighters.push_back(leader);
+#include "Team.hpp" //TODO: change to smart team
+using namespace ariel;
+using namespace std;
+Team::Team(Character& leader): leader(leader), fighters(){
+//    fighters.push_back(leader);
 }
 
-void SmartTeam::add(Character* fighter){
-
-}
-
-void SmartTeam::attack(SmartTeam& enemyTeam){
+void Team::add(Character* fighter){
 
 }
 
-int SmartTeam::stillAlive() const{
+void Team::attack(Team& enemyTeam){
+
+}
+
+int Team::stillAlive() const{
     return 1;
 }
-            
-void SmartTeam::print() const{
-    
+
+void Team::print() const{
+
 }
