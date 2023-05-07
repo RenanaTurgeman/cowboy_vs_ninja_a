@@ -23,7 +23,8 @@ namespace ariel {
         /* Prints the coordinates of the given point to the console.*/
         void print() const;
         
-        /*The function returns the closest point to the destination point, - which is at most the given distance from the source point*/
+        /*The function returns the closest point to the destination point,
+         * - which is at most the given distance from the source point*/
         Point moveTowards(Point& source, Point& destination, double distance) const;
         friend std::ostream& operator<<(std::ostream& ostream, const Point& point); //TODO: check if really need (not work without)
 

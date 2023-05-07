@@ -4,57 +4,52 @@
 using namespace std;
 using namespace ariel;
 
-TEST_SUITE("Test Point Class"){
+TEST_SUITE("Test Point Class") {
 
     TEST_CASE("Test default constructor") {
-        Point p1;
-        CHECK(p1.distance(Point(0, 0)) == 0);
+        //defulat constructor should return the point (0,0)
+        Point p;
+        CHECK((p.distance(Point(0, 0)) == 0));
     }
 
-    TEST_CASE("Test Point class") {
-        Point p1(0, 0);
-        Point p2(3, 4);
-        Point p3(-5, -12);
+    TEST_CASE("Test constructor using distance") {
+        Point p1(1, 2);
+        Point p2(3.14, -2.5);
+        Point p3(-10, 5);
 
-        SECTION("Test distance") {
-            double d1 = p1.distance(p2);
-            double d2 = p2.distance(p3);
-            double d3 = p3.distance(p1);
-
-            REQUIRE(d1 == 5);
-            REQUIRE(d2 == 13);
-            REQUIRE(d3 == 13);
-        }
-
-        // SECTION("Test moveTowards") {
-        //     Point p4 = p1.moveTowards(p1, p2, 1);
-        //     Point p5 = p2.moveTowards(p2, p3, 2);
-        //     Point p6 = p3.moveTowards(p3, p1, 10);
-
-        //     REQUIRE(p4.distance(p1) == Approx(1));
-        //     REQUIRE(p5.distance(p2) == Approx(2));
-        //     REQUIRE(p6.distance(p3) == Approx(10));
-        // }
+        CHECK((p1.distance(Point(0, 0)) == 2.236));
+        CHECK((p2.distance(Point(0, 0)) == 4.371)); //TODO: check again
+        CHECK((p3.distance(Point(0, 0)) == 11.180));
     }
 
-    TEST_CASE("Distance between points") {
+    TEST_CASE("Test distance between points") {
         Point p1(0, 0);
         Point p2(3, 4);
         Point p3(-1, -1);
         Point p4(1.5, 2.5);
 
-        CHECK(p1.distance(p2) == 5); // distance between (0,0) and (3,4) is 5
-        CHECK(p2.distance(p3) == 5.656854); // distance between (3,4) and (-1,-1) is sqrt(26) or approx. 5.656854
-        CHECK(p3.distance(p4) == 3.535534); // distance between (-1,-1) and (1.5,2.5) is sqrt(10) or approx. 3.535534
+        CHECK((p1.distance(p2) == 5));
+        CHECK((p2.distance(p3) == 6.403));
+        CHECK((p3.distance(p4) == 4.301));
     }
 
-
-    TEST_CASE("Distance between identical points") {
+    TEST_CASE("Test distance between identical points") {
         Point p1(2, 3);
         Point p2(2, 3);
 
-        CHECK(p1.distance(p2) == 0); // distance between identical points should be 0
+        CHECK((p1.distance(p2) == 0));
     }
 
+    TEST_CASE("Test moveTowards function") { //TODO: check if I understand this function correct
+        Point p1(0, 0);
+        Point p2(3, 4);
+        Point p3(-1, -1);
+        Point p4(1.5, 2.5);
 
-}//test point class
+        CHECK((p1.moveTowards(p1, p2, 3).distance(p2) == 2));
+        CHECK((p2.moveTowards(p2, p3, 2).distance(p3) == 2));
+        CHECK((p3.moveTowards(p3, p1, 1).distance(p1) == 1.414));
+        CHECK((p4.moveTowards(p4, p1, 0.5).distance(p1) == 0.5));
+    }
+
+} // end of test suite
