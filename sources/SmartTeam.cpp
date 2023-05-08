@@ -17,7 +17,8 @@ int SmartTeam::stillAlive() const{
     return 1;
 }
 
-void SmartTeam::print() const{
+string SmartTeam::print() const{
+    return "hi";
 
 }
 ostream& ariel::operator<<(std::ostream& ostream, const SmartTeam& smartTeam){

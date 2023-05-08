@@ -173,4 +173,4 @@ TEST_SUITE("Test Ninja class and subclass"){
         old.hit(100);
         CHECK((old.isAlive() == false));
     }
-}
+}//suit ninja

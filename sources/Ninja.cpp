@@ -36,8 +36,9 @@ Point Ninja::getLocation() const {
     return Character::getLocation();
 }
 
-void Ninja::print() {
-    
+string Ninja::print() {
+    return "hi";
+
 }
 
 ostream& ariel::operator<<(std::ostream& ostream, const Ninja& ninja){

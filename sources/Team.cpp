@@ -16,9 +16,10 @@ void Team::attack(Team* enemyTeam){
 int Team::stillAlive() const{
     return 1;
 }
-            
-void Team::print() const{
-    
+
+string Team::print() const{
+    return "hi";
+
 }
 
 ostream& ariel::operator<<(std::ostream& ostream, const Team& team){

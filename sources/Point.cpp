@@ -14,7 +14,8 @@ double Point::distance(const Point& other) const{
     return 0;
 }
 
-void Point::print() const{
+string Point::print() const{
+    return "hi";
 
 }
 

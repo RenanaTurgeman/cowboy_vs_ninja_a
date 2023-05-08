@@ -38,8 +38,10 @@ Point Cowboy::getLocation() const {
     return Character::getLocation();
 }
 
-void Cowboy::print() {
+string Cowboy::print() {
     // cout << "Cowboy " << getName() << " is at location (" << getLocation().getX() << ", " << getLocation().getY() << ")" << endl;
+    return "hi";
+
 }
 
 ostream& ariel::operator<<(std::ostream& ostream, const Cowboy& cowboy){

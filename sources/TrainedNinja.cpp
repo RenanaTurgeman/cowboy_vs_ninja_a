@@ -34,8 +34,8 @@ Point TrainedNinja::getLocation() const {
     return Ninja::getLocation();
 }
 
-void TrainedNinja::print() {
-    
+string TrainedNinja::print() {
+    return "hi";
 }
 
 ostream& ariel::operator<<(std::ostream& ostream, const TrainedNinja& trainedNinja){

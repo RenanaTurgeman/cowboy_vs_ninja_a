@@ -26,7 +26,7 @@ namespace ariel {
             /*Returns the character's current location.*/
             Point getLocation() const override;
             /*Prints the character's name and location to the console.*/
-            void print() override;
+            string print() override;
 
             friend std::ostream& operator<<(std::ostream& ostream, const Ninja& ninja); //TODO: check if really need (not work without)
 

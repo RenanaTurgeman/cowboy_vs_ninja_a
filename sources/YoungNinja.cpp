@@ -34,8 +34,8 @@ Point YoungNinja::getLocation() const {
     return Ninja::getLocation();
 }
 
-void YoungNinja::print() {
-    
+string YoungNinja::print() {
+    return "hi";
 }
 
 ostream& ariel::operator<<(std::ostream& ostream, const YoungNinja& youngNinja){

@@ -31,7 +31,7 @@ namespace ariel {
             /*Returns the character's current location.*/
             virtual Point getLocation() const;
             /*Prints the character's name and location to the console.*/
-            virtual void print();
+            virtual string print();
 
             friend std::ostream& operator<<(std::ostream& ostream, const Character& character); //TODO: check if really need (not work without)
 

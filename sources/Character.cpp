@@ -27,8 +27,9 @@ Point Character::getLocation() const{
     return this->location;
 }
 
-void Character::print(){
-    
+string Character::print(){
+    return "hi";
+
 }
 
 ostream& ariel::operator<<(std::ostream& ostream, const Character& character){
