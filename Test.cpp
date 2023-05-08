@@ -55,7 +55,6 @@ TEST_SUITE("Test Point Class") {
 } // end of test suite
 
 TEST_SUITE("Test Character Class") {
-
     TEST_CASE("Character default constructor creates a valid object") {
         Point location{1, 1};
         Character c{"Bob", location, 10};
@@ -94,3 +93,42 @@ TEST_SUITE("Test Character Class") {
     }
 
 }// end suit character
+
+TEST_SUITE("Test Cowboy Class") {
+
+        Point location(0, 0);
+        Cowboy cowboy("cowboy", location);
+
+        TEST_CASE("Test constructor and getters") {
+            CHECK(cowboy.getName() == "cowboy");
+            CHECK(cowboy.getLocation().distance(location) == 0);
+            CHECK(cowboy.isAlive() == true);
+            CHECK(cowboy.hasboolets() == true);
+        }
+
+        TEST_CASE("Test shooting and reloading") {
+            Point enemy_location(3, 4);
+            Cowboy enemy("Tom", enemy_location);
+
+            cowboy.shoot(&enemy);
+            CHECK(enemy.isAlive() == true);
+            CHECK(cowboy.hasboolets() == false);
+
+            cowboy.reload();
+            CHECK(cowboy.hasboolets() == true);
+
+            cowboy.shoot(&enemy);
+            cowboy.shoot(&enemy);
+            cowboy.shoot(&enemy);
+            CHECK(enemy.isAlive() == false);
+            CHECK(cowboy.hasboolets() == true);
+        }
+
+        TEST_CASE("Test hit points") {
+            cowboy.hit(3);
+            CHECK(cowboy.isAlive() == true);
+
+            cowboy.hit(8);
+            CHECK(cowboy.isAlive() == false);
+        }
+}//suit character
