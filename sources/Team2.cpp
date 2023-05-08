@@ -14,7 +14,7 @@ void Team2::attack(Team2 *enemyTeam){
 }
 
 int Team2::stillAlive(){
-    return 1;
+    return 0;
 }
 
 string Team2::print(){

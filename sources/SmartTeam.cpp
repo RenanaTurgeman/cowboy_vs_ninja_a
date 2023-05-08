@@ -14,7 +14,7 @@ void SmartTeam::attack(SmartTeam* enemyTeam){
 }
 
 int SmartTeam::stillAlive() const{
-    return 1;
+    return 0;
 }
 
 string SmartTeam::print() const{
