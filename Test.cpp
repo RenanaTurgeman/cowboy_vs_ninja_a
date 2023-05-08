@@ -132,3 +132,45 @@ TEST_SUITE("Test Cowboy Class") {
             CHECK(cowboy.isAlive() == false);
         }
 }//suit character
+
+TEST_SUITE("Test Ninja class and subclass"){
+    Point location1(0, 0);
+    Ninja ninja("Bob", location1, 100, 10);
+    Point location2(3, 3);
+    OldNinja old("Alice", location2 );
+    Point location3(0, 3);
+    TrainedNinja trained("Billy", location3 );
+    Point location4(3, 0);
+    TrainedNinja young("Ron", location4 );
+
+    TEST_CASE("constructors doesnt throw errors"){
+        CHECK_NOTHROW(Ninja("Bob", location1, 100, 10));
+        CHECK_NOTHROW(OldNinja("Alice", location2));
+        CHECK_NOTHROW(TrainedNinja("Alice", location3));
+    }
+    TEST_CASE("Distance function between classes") {
+        CHECK((ninja.distance(trained) == 3));
+        CHECK((old.distance(trained) == 3));
+        CHECK((young.distance(old) == 3));
+    }
+
+    TEST_CASE("Class functions") {
+        // young Ninja has 100 hit points
+        young.hit(90);
+        CHECK((young.isAlive() == true));
+        young.hit(10);
+        CHECK((young.isAlive() == false));
+
+        // trained Ninja has 120 hit points
+        trained.hit(100);
+        CHECK((trained.isAlive() == true));
+        trained.hit(20); // trained ninja stay with no hit points
+        CHECK((trained.isAlive() == false));
+
+        // old ninja has 150 hit points
+        old.hit(50);
+        CHECK((old.isAlive() == true));
+        old.hit(100);
+        CHECK((old.isAlive() == false));
+    }
+}
