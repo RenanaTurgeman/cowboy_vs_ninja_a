@@ -24,7 +24,7 @@ namespace ariel {
             void add(Character* fighter);
             void attack(SmartTeam* enemyTeam);
             int stillAlive() const;
-            string print() const;
+            std::string print() const;
             friend std::ostream& operator<<(std::ostream& ostream, const SmartTeam& smartTeam); //TODO: check if really need (not work without)
 
     };

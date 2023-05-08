@@ -21,7 +21,7 @@ namespace ariel {
         double distance(const Point& other) const;
         
         /* Prints the coordinates of the given point to the console.*/
-        string print() const;
+        std::string print() const;
         
         /*The function returns the closest point to the destination point,
          * - which is at most the given distance from the source point*/
