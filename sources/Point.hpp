@@ -18,14 +18,14 @@ namespace ariel {
 
         /*Calculates the Euclidean distance between this point and another point.
           The other point is passed as a parameter.*/
-        double distance(const Point& other) const;
+        double distance(Point other);
         
         /* Prints the coordinates of the given point to the console.*/
-        std::string print() const;
+        std::string print();
         
         /*The function returns the closest point to the destination point,
          * - which is at most the given distance from the source point*/
-        Point moveTowards(Point& source, Point& destination, double distance) const;
+        Point moveTowards(Point& source, Point& destination, double distance);
         friend std::ostream& operator<<(std::ostream& ostream, const Point& point); //TODO: check if really need (not work without)
 
     };

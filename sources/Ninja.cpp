@@ -16,26 +16,6 @@ void Ninja::slash(const Character* enemy){
 
 }
 
-bool Ninja::isAlive() const {
-    return Character::isAlive();
-}
-            
-double Ninja::distance(const Character& other) const {
-    return Character::distance(other);
-}
-            
-void Ninja::hit(int num) {
-    return Character::hit(num);
-}
-
-string Ninja::getName() const {
-    return Character::getName();
-}
-
-Point Ninja::getLocation() const {
-    return Character::getLocation();
-}
-
 string Ninja::print() {
     return "hi";
 

@@ -13,11 +13,11 @@ void Team::attack(Team* enemyTeam){
 
 }
 
-int Team::stillAlive() const{
+int Team::stillAlive(){
     return 0;
 }
 
-string Team::print() const{
+string Team::print(){
     return "hi";
 
 }

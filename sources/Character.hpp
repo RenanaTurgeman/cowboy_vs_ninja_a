@@ -19,17 +19,17 @@ namespace ariel {
         public:
             /* Constructor for creating a new character with the given name, location, and hit points.*/
             Character(std::string name, Point& location, int hit_point);
-            ~Character() = default; 
+            virtual ~Character() = default;
             /* Returns true if the character has more than 0 hit points, and false otherwise*/
-            virtual bool isAlive() const;
+            bool isAlive() const;
             /*Calculates the distance between this character and another character.*/
-            virtual double distance(const Character& other) const;
+            double distance(Character* other);
             /* Decreases the character's hit points by the given number.*/
-            virtual void hit(int num);
+            void hit(int num);
             /*Returns the character's name*/
-            virtual std::string getName() const;
+            std::string getName() const;
             /*Returns the character's current location.*/
-            virtual Point getLocation() const;
+            Point getLocation() const;
             /*Prints the character's name and location to the console.*/
             virtual std::string print();
 

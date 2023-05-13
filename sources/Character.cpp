@@ -10,7 +10,7 @@ Character::Character(string name, Point& location, int hit_point):name(name) , l
     return true;
  }
 
-double Character::distance(const Character& other) const{
+double Character::distance(Character* other){
     return 0;
 }
             

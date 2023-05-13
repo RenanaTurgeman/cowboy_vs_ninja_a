@@ -10,16 +10,16 @@ Point::Point(double x_coor, double y_coor): x_coor(x_coor), y_coor(y_coor){
 
 }
 
-double Point::distance(const Point& other) const{
+double Point::distance(Point other){
     return 0;
 }
 
-string Point::print() const{
+string Point::print(){
     return "hi";
 
 }
 
-Point Point::moveTowards(Point& source, Point& destination, double distance) const{
+Point Point::moveTowards(Point& source, Point& destination, double distance){
     return Point(1,1);
 }
 

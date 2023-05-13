@@ -8,19 +8,21 @@
 
 #include <iostream>
 #include <vector>
+#include <memory>
+
 using namespace std;
 
 namespace ariel {
     class Team2{
         private:
-            vector<Character*> fighters; // vector to hold the fighters in the team
-            Character* leader; // pointer to the team leader
+            std::vector<std::unique_ptr<Character>> fighters; // vector to hold the fighters in the team
+            Character& leader; // pointer to the team leader
         public:
             // constructor and destructor
-            Team2(Character* leader);
-            ~Team2();
+            Team2(Character& leader);
+            ~Team2() = default;
             // member functions
-            void add(Character* fighter);
+            void add(Character& fighter);
             void attack(Team2* enemyTeam);
             int stillAlive();
             std::string print();
