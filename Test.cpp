@@ -7,7 +7,7 @@ using namespace ariel;
 TEST_SUITE("Test Point Class") {
 
     TEST_CASE("Test default constructor") {
-        //defulat constructor should return the point (0,0)
+        //default constructor should return the point (0,0)
         Point p;
         CHECK((p.distance(Point(0, 0)) == 0));
     }
@@ -18,7 +18,7 @@ TEST_SUITE("Test Point Class") {
         Point p3(-10, 5);
 
         CHECK((p1.distance(Point(0, 0)) == 2.236));
-        CHECK((p2.distance(Point(0, 0)) == 4.371)); //TODO: check again
+        CHECK((p2.distance(Point(0, 0)) == 4.371));
         CHECK((p3.distance(Point(0, 0)) == 11.180));
     }
 
@@ -40,7 +40,7 @@ TEST_SUITE("Test Point Class") {
         CHECK((p1.distance(p2) == 0));
     }
 
-    TEST_CASE("Test moveTowards function") { //TODO: check if I understand this function correct
+    TEST_CASE("Test moveTowards function") {
         Point p1(0, 0);
         Point p2(3, 4);
         Point p3(-1, -1);
@@ -57,10 +57,10 @@ TEST_SUITE("Test Point Class") {
 TEST_SUITE("Test Character Class") {
     TEST_CASE("Character default constructor creates a valid object") {
         Point location{1, 1};
-        Character c{"Bob", location, 10};
-        CHECK(c.getName() == "Bob");
-        CHECK((c.getLocation().distance(location) == 0));
-        CHECK((c.isAlive() == true));
+        Character* c = new Character{"Bob", location, 10};
+        CHECK(c->getName() == "Bob");
+        CHECK((c->getLocation().distance(location) == 0));
+        CHECK((c->isAlive() == true));
     }
 
     TEST_CASE("Character distance calculation is correct") {
@@ -133,5 +133,80 @@ TEST_SUITE("Test Cowboy Class") {
             cowboy->hit(8);
             CHECK((cowboy->isAlive() == false));
         }
-}//suit character
+}//suit cowboy
+
+TEST_SUITE("Test Ninja class and subclass"){
+    Point location1(0, 0);
+    Ninja* ninja = new Ninja("Bob", location1, 100, 10);
+    Point location2(3, 3);
+    OldNinja* old = new OldNinja("Alice", location2 );
+    Point location3(0, 3);
+    TrainedNinja* trained = new TrainedNinja("Billy", location3 );
+    Point location4(3, 0);
+    YoungNinja* young = new YoungNinja("Ron", location4 );
+
+    TEST_CASE("constructors doesnt throw errors"){
+        CHECK_NOTHROW(Ninja("Bob", location1, 100, 10));
+        CHECK_NOTHROW(OldNinja("Alice", location2));
+        CHECK_NOTHROW(TrainedNinja("Alice", location3));
+    }
+    TEST_CASE("Distance function between classes") {
+        CHECK((ninja->distance(trained) == 3));
+        CHECK((old->distance(trained) == 3));
+        CHECK((young->distance(old) == 3));
+    }
+
+    TEST_CASE("Class functions") {
+        // young Ninja has 100 hit points
+        young->hit(90);
+        CHECK((young->isAlive() == true));
+        young->hit(10);
+        CHECK((young->isAlive() == false));
+
+        // trained Ninja has 120 hit points
+        trained->hit(100);
+        CHECK((trained->isAlive() == true));
+        trained->hit(20); // trained ninja stay with no hit points
+        CHECK((trained->isAlive() == false));
+
+        // old ninja has 150 hit points
+        old->hit(50);
+        CHECK((old->isAlive() == true));
+        old->hit(100);
+        CHECK((old->isAlive() == false));
+    }
+}//suit ninja
+
+TEST_SUITE("Test Team class"){
+    Point location1(0, 0);
+    Ninja* ninja = new Ninja("Bob", location1, 100, 10);
+    Point location2(3, 3);
+    OldNinja* old = new OldNinja("Alice", location2 );
+    Point location3(0, 3);
+    TrainedNinja* trained = new TrainedNinja("Billy", location3 );
+    Point location4(3, 0);
+    YoungNinja* young = new YoungNinja("Ron", location4 );
+    Team* team1 = new Team(ninja); //bob is the leader
+    Team* team2 = new Team(old); //alice is the leader
+
+    TEST_CASE("check if the team create good"){
+        //only the leader in the team:
+        CHECK((team1->stillAlive()==1));
+        CHECK((team2->stillAlive()==1));
+    }
+
+    TEST_CASE("add members to the team"){
+        team1->add(trained);
+        team2->add(young);
+        //if each group now have 2 fighters the add successes
+        CHECK((team1->stillAlive()==2));
+        CHECK((team2->stillAlive()==2));
+    }
+
+    TEST_CASE("check the attack function"){
+        team2->attack(team1);
+        CHECK((team1->stillAlive()==0)); //its the group that attack
+        CHECK((team2->stillAlive()==2));
+    }
+}//suit team
 
